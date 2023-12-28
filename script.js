@@ -144,7 +144,7 @@ let quizData = [
         Id:"4",
         question:"_____ refer to the names of variables, functions, arrays, classes etc. created by the programmer",
         options:["Identifiers","Keywords","Constraints","Strings"],
-        correct:"Identifiers"
+        correct:"Resource"
        }
     ]
 ]
@@ -228,18 +228,26 @@ quizCreate = (data) => {
 console.log(quizData[0].length);
 nextQuiz = () =>{
     questionCount += 1;
+    
     if (questionCount == quizData[0].length) {
+        
         container.classList.add("hide");
         scoreContainer.classList.remove("hide");
+       
         userScore.innerHTML =
             "Your score is " + scoreCount + " out of " + questionCount;
             restart.style.display="block"
     } else {
+        
         countOfQuestion.innerHTML =
             questionCount + 1 + " of " + quizData[0].length + " Question";
+        
         quizDisplay(questionCount);
+        
         count = 11;
+       
         clearInterval(countdown);
+        
         timerDisplay();
     }
 }
@@ -253,17 +261,22 @@ function checker(userOption,data) {
 	console.log(options);
 	
 	if (userSolution === quizData[data][questionCount].correct) {
+		
 		userOption.classList.add("correct");
 		scoreCount++;
 	} else {
+		
+		userOption.classList.add("inCorrect");
+		
 		options.forEach((element) => {
 			if (element.innerText == quizData[data][questionCount].correct) {
 				element.classList.add("correct");
 			}
 		});
 	}
+	
 	clearInterval(countdown);
-
+	
 	options.forEach((element) => {
 		element.disabled = true;
 	});

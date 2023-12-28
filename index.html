@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- start quiz button -->
+    <div class="start-quiz" >
+        <button onclick=startQuiz()>Start quiz</button>
+    </div>
+
+    <!-- quiz type option -->
+     <div class="quiz-option-container hide" id="option-con">
+        <div class="quiz-option">
+            <div class="option" title="0">javascript quiz</div>
+            <div class="option" title="1">python quiz</div>
+            <div class="option" title="2">java Quiz</div>
+            <div class="option" title="3">C++ Quiz</div>
+        </div>
+     </div>
+    <!--quiz-container-->
+    <div class="container hide">
+    <div class="wrapper " >
+        <div class="quiz-container">
+            <header>
+                <div id="no-of-count">
+                    <span id="no-of-question"></span>
+                </div>
+                <div class="timer">
+                    <img src="img/timer.png" alt="" height="20px" width="20px">
+                    <div class="time-box">
+                         <span id="time-left">a</span>
+                    </div>
+                </div>
+            </header>
+            <div id="display-container">
+
+            </div>
+            <div class="btn-container">
+                <button onclick=nextQuiz()>next</button>
+                <button onclick=exit()>Exit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- score and restart-container -->
+    <div id="score-container" class="hide" >
+        <div id="user-score"></div>
+        <button onclick=replay() id="restart">restart</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
